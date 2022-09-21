@@ -9,13 +9,17 @@
 /* Begin PBXBuildFile section */
 		A211AD4628DA9D1A0083EDFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A211AD4528DA9D1A0083EDFD /* AppDelegate.swift */; };
 		A211AD4828DA9D1A0083EDFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A211AD4728DA9D1A0083EDFD /* SceneDelegate.swift */; };
-		A211AD4A28DA9D1A0083EDFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A211AD4928DA9D1A0083EDFD /* ViewController.swift */; };
-		A211AD4D28DA9D1A0083EDFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A211AD4B28DA9D1A0083EDFD /* Main.storyboard */; };
 		A211AD4F28DA9D1B0083EDFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A211AD4E28DA9D1B0083EDFD /* Assets.xcassets */; };
 		A211AD5228DA9D1B0083EDFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A211AD5028DA9D1B0083EDFD /* LaunchScreen.storyboard */; };
 		A211AD5D28DA9D1B0083EDFD /* RocketMortgageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A211AD5C28DA9D1B0083EDFD /* RocketMortgageTests.swift */; };
 		A211AD6728DA9D1B0083EDFD /* RocketMortgageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A211AD6628DA9D1B0083EDFD /* RocketMortgageUITests.swift */; };
 		A211AD6928DA9D1B0083EDFD /* RocketMortgageUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A211AD6828DA9D1B0083EDFD /* RocketMortgageUITestsLaunchTests.swift */; };
+		A211AD7A28DAA5780083EDFD /* Enviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A211AD7928DAA5780083EDFD /* Enviroment.swift */; };
+		A211AD7C28DAA57F0083EDFD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A211AD7B28DAA57F0083EDFD /* Constants.swift */; };
+		A292755328DAC95D00004780 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A292755228DAC95D00004780 /* CellModel.swift */; };
+		A292755528DAC97800004780 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A292755428DAC97800004780 /* Cell.swift */; };
+		A292755B28DACAA700004780 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A292755A28DACAA700004780 /* ViewController.swift */; };
+		A292755D28DACB3F00004780 /* VideoGameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A292755C28DACB3F00004780 /* VideoGameData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +43,6 @@
 		A211AD4228DA9D1A0083EDFD /* RocketMortgage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketMortgage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A211AD4528DA9D1A0083EDFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A211AD4728DA9D1A0083EDFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A211AD4928DA9D1A0083EDFD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A211AD4C28DA9D1A0083EDFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A211AD4E28DA9D1B0083EDFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A211AD5128DA9D1B0083EDFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A211AD5328DA9D1B0083EDFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +51,12 @@
 		A211AD6228DA9D1B0083EDFD /* RocketMortgageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RocketMortgageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A211AD6628DA9D1B0083EDFD /* RocketMortgageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketMortgageUITests.swift; sourceTree = "<group>"; };
 		A211AD6828DA9D1B0083EDFD /* RocketMortgageUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketMortgageUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A211AD7928DAA5780083EDFD /* Enviroment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enviroment.swift; sourceTree = "<group>"; };
+		A211AD7B28DAA57F0083EDFD /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A292755228DAC95D00004780 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
+		A292755428DAC97800004780 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		A292755A28DACAA700004780 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A292755C28DACB3F00004780 /* VideoGameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGameData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +91,7 @@
 				A211AD5B28DA9D1B0083EDFD /* RocketMortgageTests */,
 				A211AD6528DA9D1B0083EDFD /* RocketMortgageUITests */,
 				A211AD4328DA9D1A0083EDFD /* Products */,
+				A211AD7628DA9D360083EDFD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,12 +109,16 @@
 			isa = PBXGroup;
 			children = (
 				A211AD4528DA9D1A0083EDFD /* AppDelegate.swift */,
+				A292755228DAC95D00004780 /* CellModel.swift */,
+				A292755428DAC97800004780 /* Cell.swift */,
 				A211AD4728DA9D1A0083EDFD /* SceneDelegate.swift */,
-				A211AD4928DA9D1A0083EDFD /* ViewController.swift */,
-				A211AD4B28DA9D1A0083EDFD /* Main.storyboard */,
+				A292755A28DACAA700004780 /* ViewController.swift */,
+				A292755C28DACB3F00004780 /* VideoGameData.swift */,
 				A211AD4E28DA9D1B0083EDFD /* Assets.xcassets */,
 				A211AD5028DA9D1B0083EDFD /* LaunchScreen.storyboard */,
 				A211AD5328DA9D1B0083EDFD /* Info.plist */,
+				A211AD7928DAA5780083EDFD /* Enviroment.swift */,
+				A211AD7B28DAA57F0083EDFD /* Constants.swift */,
 			);
 			path = RocketMortgage;
 			sourceTree = "<group>";
@@ -127,6 +140,13 @@
 			path = RocketMortgageUITests;
 			sourceTree = "<group>";
 		};
+		A211AD7628DA9D360083EDFD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +163,8 @@
 			dependencies = (
 			);
 			name = RocketMortgage;
+			packageProductDependencies = (
+			);
 			productName = RocketMortgage;
 			productReference = A211AD4228DA9D1A0083EDFD /* RocketMortgage.app */;
 			productType = "com.apple.product-type.application";
@@ -233,7 +255,6 @@
 			files = (
 				A211AD5228DA9D1B0083EDFD /* LaunchScreen.storyboard in Resources */,
 				A211AD4F28DA9D1B0083EDFD /* Assets.xcassets in Resources */,
-				A211AD4D28DA9D1A0083EDFD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +279,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A211AD4A28DA9D1A0083EDFD /* ViewController.swift in Sources */,
+				A211AD7C28DAA57F0083EDFD /* Constants.swift in Sources */,
+				A292755D28DACB3F00004780 /* VideoGameData.swift in Sources */,
+				A292755528DAC97800004780 /* Cell.swift in Sources */,
 				A211AD4628DA9D1A0083EDFD /* AppDelegate.swift in Sources */,
+				A211AD7A28DAA5780083EDFD /* Enviroment.swift in Sources */,
 				A211AD4828DA9D1A0083EDFD /* SceneDelegate.swift in Sources */,
+				A292755B28DACAA700004780 /* ViewController.swift in Sources */,
+				A292755328DAC95D00004780 /* CellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +323,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A211AD4B28DA9D1A0083EDFD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A211AD4C28DA9D1A0083EDFD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A211AD5028DA9D1B0083EDFD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -444,7 +462,7 @@
 				INFOPLIST_FILE = RocketMortgage/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -472,7 +490,7 @@
 				INFOPLIST_FILE = RocketMortgage/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
