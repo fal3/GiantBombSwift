@@ -11,18 +11,20 @@ import UIKit
 class Cell: UICollectionViewCell {
     // MARK: Variables
     fileprivate lazy var title: UILabel = {
-        let textView = UILabel(frame: CGRect.zero)
-        textView.numberOfLines = 1
-        textView.font = UIFont.boldSystemFont(ofSize: 14.0)
-        textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.lineBreakMode = .byTruncatingTail
-        return textView
+        let label = UILabel(frame: CGRect.zero)
+        label.numberOfLines = 1
+        label.font = UIFont.boldSystemFont(ofSize: 14.0)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 0.8)
+        label.lineBreakMode = .byTruncatingTail
+        return label
     }()
     
     
     lazy var image: UIImageView = {
         let imageView = UIImageView(frame: .zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
@@ -41,7 +43,7 @@ class Cell: UICollectionViewCell {
         contentView.layer.cornerRadius = 6
         contentView.layer.masksToBounds = true
         self.title.text = model.title
-        self.contentView.translatesAutoresizingMaskIntoConstraints = false
+//        self.contentView.translatesAutoresizingMaskIntoConstraints = false
         addConstraintsToView()
         URLSession.shared.dataTask(with: model.imageURL, completionHandler: { (data, response, error) in
             guard let data = data, error == nil else {
@@ -54,28 +56,15 @@ class Cell: UICollectionViewCell {
     }
     
     fileprivate func addConstraintsToView() {
-        contentView.addSubview(image)
+        let stackView = UIStackView(arrangedSubviews: [image, title])
+        stackView.axis = .vertical
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(stackView)
+        stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        stackView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+
         contentView.backgroundColor = .white
-        NSLayoutConstraint.activate([
-            self.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            self.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            self.topAnchor.constraint(equalTo: contentView.topAnchor),
-            self.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-        ])
-        contentView.backgroundColor = .white
-        NSLayoutConstraint.activate([
-            image.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            image.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            image.topAnchor.constraint(equalTo: contentView.topAnchor),
-            image.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-        ])
-        contentView.addSubview(title)
-        title.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 0.8)
-        NSLayoutConstraint.activate([
-            title.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            title.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            image.topAnchor.constraint(equalTo: image.bottomAnchor),
-            title.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-        ])
     }
 }

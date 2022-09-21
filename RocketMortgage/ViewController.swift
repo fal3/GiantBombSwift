@@ -49,32 +49,45 @@ final class ViewController: UICollectionViewController {
         self.title = "Video games"
         collectionView.register(Cell.self, forCellWithReuseIdentifier: "Cell")
         
-        fetchSlides {
+        fetchSlides { games in
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
-                
-//                self.models = slides.compactMap({ CellModel(title: $0.metaData?.items?.caption, imageURL: URL(string: $0.metaData?.crops?.oneToOne ?? "")) })
+                self.models = games.results?.compactMap(cellModel) ?? []
             }
+        }
+        
+        func cellModel(_ game: Game) -> CellModel? {
+            let name = game.name
+            let imageURL = URL(string: game.image?.thumbUrl ?? "")
+            return CellModel(title: name, imageURL: imageURL)
         }
     
     }
     
     
     func fetchSlides(completion: @escaping  (VideoGamesDataModel) -> ()) {
-        guard let url = URL(string: "https://www.giantbomb.com/api/documentation/#toc-0-5 ") else { return }
+        guard let url = URL(string: "https://www.giantbomb.com/api/games/?api_key=\(Constants.apiKey)&format=json") else { return }
         let request = URLRequest(url: url)
         let session = URLSession.shared
-        
         let task = session.dataTask(with: request){ (data, _, error) in
             do {
                 guard let data = data else { return }
                 let decoder = JSONDecoder()
                 let gamesData = try decoder.decode(VideoGamesDataModel.self, from: data)
-//                let decoded = try decoder.decode(VideoGamesDataModel.self, from: data)
-                
                 completion(gamesData)
+            } catch let DecodingError.dataCorrupted(context) {
+                print(context)
+            } catch let DecodingError.keyNotFound(key, context) {
+                print("Key '\(key)' not found:", context.debugDescription)
+                print("codingPath:", context.codingPath)
+            } catch let DecodingError.valueNotFound(value, context) {
+                print("Value '\(value)' not found:", context.debugDescription)
+                print("codingPath:", context.codingPath)
+            } catch let DecodingError.typeMismatch(type, context)  {
+                print("Type '\(type)' mismatch:", context.debugDescription)
+                print("codingPath:", context.codingPath)
             } catch {
-                print(error.localizedDescription)
+                print("error: ", error)
             }
         }
         task.resume()
