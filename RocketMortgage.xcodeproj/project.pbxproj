@@ -22,6 +22,8 @@
 		A292755D28DACB3F00004780 /* VideoGameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A292755C28DACB3F00004780 /* VideoGameData.swift */; };
 		A292756628DB98E000004780 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A292756428DB98E000004780 /* DetailViewController.swift */; };
 		A292756728DB98E000004780 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A292756528DB98E000004780 /* DetailViewController.xib */; };
+		A292756B28DBA07600004780 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A292756A28DBA07600004780 /* ResultsViewController.swift */; };
+		A292756D28DBA5AA00004780 /* GamesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A292756C28DBA5AA00004780 /* GamesAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		A292755C28DACB3F00004780 /* VideoGameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGameData.swift; sourceTree = "<group>"; };
 		A292756428DB98E000004780 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A292756528DB98E000004780 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		A292756A28DBA07600004780 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		A292756C28DBA5AA00004780 /* GamesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,12 +117,11 @@
 			isa = PBXGroup;
 			children = (
 				A211AD4528DA9D1A0083EDFD /* AppDelegate.swift */,
-				A292755228DAC95D00004780 /* CellModel.swift */,
-				A292755428DAC97800004780 /* Cell.swift */,
 				A211AD4728DA9D1A0083EDFD /* SceneDelegate.swift */,
-				A292755A28DACAA700004780 /* ViewController.swift */,
-				A292756428DB98E000004780 /* DetailViewController.swift */,
-				A292756528DB98E000004780 /* DetailViewController.xib */,
+				A292755228DAC95D00004780 /* CellModel.swift */,
+				A292756C28DBA5AA00004780 /* GamesAPI.swift */,
+				A292756F28DBA86200004780 /* GameCell */,
+				A292756E28DBA82700004780 /* Detail */,
 				A292755C28DACB3F00004780 /* VideoGameData.swift */,
 				A211AD4E28DA9D1B0083EDFD /* Assets.xcassets */,
 				A211AD5028DA9D1B0083EDFD /* LaunchScreen.storyboard */,
@@ -151,6 +154,25 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A292756E28DBA82700004780 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				A292756428DB98E000004780 /* DetailViewController.swift */,
+				A292756528DB98E000004780 /* DetailViewController.xib */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		A292756F28DBA86200004780 /* GameCell */ = {
+			isa = PBXGroup;
+			children = (
+				A292755428DAC97800004780 /* Cell.swift */,
+				A292755A28DACAA700004780 /* ViewController.swift */,
+				A292756A28DBA07600004780 /* ResultsViewController.swift */,
+			);
+			path = GameCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,11 +311,13 @@
 				A292756628DB98E000004780 /* DetailViewController.swift in Sources */,
 				A211AD7C28DAA57F0083EDFD /* Constants.swift in Sources */,
 				A292755D28DACB3F00004780 /* VideoGameData.swift in Sources */,
+				A292756B28DBA07600004780 /* ResultsViewController.swift in Sources */,
 				A292755528DAC97800004780 /* Cell.swift in Sources */,
 				A211AD4628DA9D1A0083EDFD /* AppDelegate.swift in Sources */,
 				A211AD7A28DAA5780083EDFD /* Enviroment.swift in Sources */,
 				A211AD4828DA9D1A0083EDFD /* SceneDelegate.swift in Sources */,
 				A292755B28DACAA700004780 /* ViewController.swift in Sources */,
+				A292756D28DBA5AA00004780 /* GamesAPI.swift in Sources */,
 				A292755328DAC95D00004780 /* CellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

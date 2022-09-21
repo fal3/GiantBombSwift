@@ -1,13 +1,13 @@
 //
-//  ViewController.swift
+//  ResultsViewController.swift
 //  RocketMortgage
 //
 //  Created by Alexander Fallah on 9/21/22.
 //
 
+import Foundation
 import UIKit
-
-final class ViewController: UICollectionViewController {
+final class ResultsViewController: UICollectionViewController {
 
     var models: [CellModel] {
         didSet {
@@ -17,7 +17,7 @@ final class ViewController: UICollectionViewController {
     
     var games: [Game] = []
 
-    init() {
+    init(_ games: [Game]) {
         func generateLayout() -> UICollectionViewLayout {
             let layout = UICollectionViewCompositionalLayout { (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
                 let isWide = layoutEnvironment.container.effectiveContentSize.width > 500
@@ -36,64 +36,27 @@ final class ViewController: UICollectionViewController {
             }
             return layout
         }
-        models = []
+        func cellModel(_ game: Game) -> CellModel? {
+            let name = game.name
+            let imageURL = URL(string: game.image?.thumbUrl ?? "")
+            return CellModel(title: name, imageURL: imageURL)
+        }
+        self.models = games.compactMap(cellModel) 
+        self.games = games
+        
         super.init(collectionViewLayout: generateLayout())
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = .white
         self.title = "Video games"
         collectionView.register(Cell.self, forCellWithReuseIdentifier: "Cell")
-        
-        fetchSlides { games in
-            DispatchQueue.main.async { [weak self] in
-                guard let self = self else { return }
-                self.models = games.results?.compactMap(cellModel) ?? []
-                self.games = games.results?.compactMap({$0}) ?? []
-            }
-        }
-        
-        func cellModel(_ game: Game) -> CellModel? {
-            let name = game.name
-            let imageURL = URL(string: game.image?.thumbUrl ?? "")
-            return CellModel(title: name, imageURL: imageURL)
-        }
-    
-    }
-    
-    
-    func fetchSlides(completion: @escaping  (VideoGamesDataModel) -> ()) {
-        guard let url = URL(string: "https://www.giantbomb.com/api/games/?api_key=\(Constants.apiKey)&format=json") else { return }
-        let request = URLRequest(url: url)
-        let session = URLSession.shared
-        let task = session.dataTask(with: request){ (data, _, error) in
-            do {
-                guard let data = data else { return }
-                let decoder = JSONDecoder()
-                let gamesData = try decoder.decode(VideoGamesDataModel.self, from: data)
-                completion(gamesData)
-            } catch let DecodingError.dataCorrupted(context) {
-                print(context)
-            } catch let DecodingError.keyNotFound(key, context) {
-                print("Key '\(key)' not found:", context.debugDescription)
-                print("codingPath:", context.codingPath)
-            } catch let DecodingError.valueNotFound(value, context) {
-                print("Value '\(value)' not found:", context.debugDescription)
-                print("codingPath:", context.codingPath)
-            } catch let DecodingError.typeMismatch(type, context)  {
-                print("Type '\(type)' mismatch:", context.debugDescription)
-                print("codingPath:", context.codingPath)
-            } catch {
-                print("error: ", error)
-            }
-        }
-        task.resume()
+            
+
     }
 
     ///- Mark: - Data source
@@ -115,5 +78,3 @@ final class ViewController: UICollectionViewController {
         self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
-
-
