@@ -14,6 +14,8 @@ final class ViewController: UICollectionViewController {
             collectionView.reloadData()
         }
     }
+    
+    var games: [Game] = []
 
     init() {
         func generateLayout() -> UICollectionViewLayout {
@@ -53,6 +55,7 @@ final class ViewController: UICollectionViewController {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
                 self.models = games.results?.compactMap(cellModel) ?? []
+                self.games = games.results?.compactMap({$0}) ?? []
             }
         }
         
@@ -104,6 +107,12 @@ final class ViewController: UICollectionViewController {
         let model = models[indexPath.item]
         cell.setUpCell(model: model)
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let game = games[indexPath.item]
+        let detailViewController = DetailViewController(game: game)
+        self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
 

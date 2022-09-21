@@ -43,7 +43,7 @@ class Cell: UICollectionViewCell {
         contentView.layer.cornerRadius = 6
         contentView.layer.masksToBounds = true
         self.title.text = model.title
-//        self.contentView.translatesAutoresizingMaskIntoConstraints = false
+        
         addConstraintsToView()
         URLSession.shared.dataTask(with: model.imageURL, completionHandler: { (data, response, error) in
             guard let data = data, error == nil else {
